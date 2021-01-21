@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.example.demo.mybatis.mapper.ActorMyBatisMapper">
+	<resultMap
+		type="com.example.demo.domain.Actor"
+		id="actorResultMap">
+		<result property="firstName" column="first_name"
+			jdbcType="CHAR" />
+		<result property="lastName" column="last_name"
+			jdbcType="CHAR" />
+		<result property="lastUpdate" column="last_update"
+			jdbcType="TIMESTAMP" />
+	</resultMap>
+	<select id="getActors" resultMap="actorResultMap">
+		select 
+		a.first_name,
+		a.last_name,
+		a.last_update
+		from
+		actor a
+	</select>
+</mapper>
